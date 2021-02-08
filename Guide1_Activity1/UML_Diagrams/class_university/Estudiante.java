@@ -1,15 +1,11 @@
-public class Estudiante {
+public class Estudiante extends Persona {
 
 	private int semestreActual;
 
-	private string carrera;
+	private Carrera carrera;
 
 	private string fechaIngreso;
 
 	private int attribute21;
-
-	private Carrera carrera;
-
-	private Carrera carrera;
 
 }

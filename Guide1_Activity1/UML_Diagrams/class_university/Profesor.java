@@ -1,4 +1,4 @@
-public class Profesor {
+public class Profesor extends Persona {
 
 	private string nacionalidad;
 
@@ -15,12 +15,6 @@ public class Profesor {
 		private string profesor;
 
 		private string estudiante;
-
-		private string carrera;
-
-		private string curso;
-
-		private Carrera carrera;
 
 		private Carrera[] carrera;
 
