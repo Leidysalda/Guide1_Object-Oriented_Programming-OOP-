@@ -1,32 +1,31 @@
-Software Development
+Software Development :gear:
 ======
 
-* Object-oriented programming
-* Patterns of designs
-* Graphical interfaces
-* Complexity analysis of algorithms
-* Linear, recursive and nonlinear data structures
-* Search and sort
-* Final project
-
+* Object-oriented programming.
+* Patterns of designs.
+* Graphical interfaces.
+* Complexity analysis of algorithms.
+* Linear, recursive and nonlinear data structures.
+* Search and sort.
+* Final project.
+>
+>
 ## Guide1. Object-Oriented Programming (OOP)
 ### Activity 1. Class diagrams in UML (Unified Modeling Language)
 
 * Class diagrams modeling exercises
 * Source code
- 
+> 
 ### Activity 2. Basic object-oriented programming in Java
 
 * Business Fair Project
-
+>
 ### Activity 3. Problem solving using inheritance
 
 * Parking Project
-
-
-
+>
+>
 ## Guide2. Patrones de diseño e interfaces gráficas de Java
-
 ### Activity 1. Software design patterns
 
 ### Activity 2. Java and graphical interfaces
@@ -34,23 +33,22 @@ Software Development
 * Project Calculation of taxes of a car
 
 
+## Guide 3. Data structure in Java
+### Activity 1. Nonlinear data structures
 
-## Guide 3. Estructura de datos en Java
+* Solution to problems on algorithmic complexity
 
-### Actividad 1. Estructuras de  datos no lineales
+### Binary trees
 
-* Solucion a problemas sobre complejidad algoritmica
-* Arboles binarios
-* solucion a grafos con el algoritmo de Dijkstra
+* Solution to graphs with Dijkstra's algorithm
 
-### Actividad 2. Estructuras de datos enlazadas
+### Activity 2. Linked data structures
 
-* Proyecto Central de pacientes
+* Central Patient Project
 
-### Actividad 3. El TAD pila y el TAD cola.
+### Activity 3. The stack TAD and the tail TAD.
 
-* Proyecto Evaluador de expresiones aritméticas 
-
+* Project Evaluator of arithmetic expressions
 
 ## Guide 4. Advanced programming notions
 
