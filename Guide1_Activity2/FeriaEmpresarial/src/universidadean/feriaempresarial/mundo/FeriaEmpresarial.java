@@ -14,6 +14,7 @@
 package universidadean.feriaempresarial.mundo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Clase que modela una feria empresarial
@@ -103,6 +104,11 @@ public class FeriaEmpresarial {
      */
     public static final int MAX_PERSONAS_ASISTENTES = 20;
 
+    /**
+     * Total Expositores
+     */
+    public int cantidadTotalExpositores = 0;
+
     // -----------------------------------------------------------------
     // Atributos
     // -----------------------------------------------------------------
@@ -116,6 +122,7 @@ public class FeriaEmpresarial {
      * Puestos de la feria
      */
     private Puesto[] puestos;
+
 
     // -----------------------------------------------------------------
     // Constructores
@@ -448,12 +455,98 @@ public class FeriaEmpresarial {
      * @return respuesta1
      */
     public String metodo1() {
-        //
-        int numeroPersonasAsistentes = 0;
-        if (darNumeroPersonasAsistentes() > 0) {
-            return numeroPersonasAsistentes;
+        /**
+         * Cantidad de Expositores por Zona
+         */
+
+        int  cantExpositoresZonaNorte = 0;
+        int  cantExpositoresZonaOriente = 0;
+        int  cantExpositoresZonaSur = 0;
+        int  cantExpositoresZonaOccidente = 0;
+        int  cantExpositoresZonaCentro = 0;
+        String zonaExpositores = null;
+
+        ArrayList<Integer> total = new ArrayList<Integer>();
+
+
+        /**
+         * Cantidad de Expositores Zonas
+         */
+        for (Puesto p : puestos) {
+            if (p.estaOcupado() && p.darZona().equals(Puesto.ZONA_NORTE)) {
+                for (Empresa e : empresas) {
+                    if (p.darNombreEmpresa().equals(e.darNombre())) {
+                        cantExpositoresZonaNorte += e.darNumeroPersonasAsistentes();
+                        total.add(cantExpositoresZonaNorte);
+                    }
+                }
+                cantidadTotalExpositores = cantExpositoresZonaNorte;
+                zonaExpositores = Puesto.ZONA_NORTE;
+            }
         }
-        return "Respuesta 1";
+        for (Puesto p : puestos) {
+            if (p.estaOcupado() && p.darZona().equals(Puesto.ZONA_SUR)) {
+                for (Empresa e : empresas) {
+                    if (p.darNombreEmpresa().equals(e.darNombre())) {
+                        cantExpositoresZonaSur += e.darNumeroPersonasAsistentes();
+                        total.add(cantExpositoresZonaSur);
+                    }
+                }
+                if (cantidadTotalExpositores < cantExpositoresZonaSur) {
+                    cantidadTotalExpositores = cantExpositoresZonaSur;
+                    zonaExpositores = Puesto.ZONA_SUR;
+                }
+            }
+        }
+         for (Puesto p : puestos) {
+             if (p.estaOcupado() && p.darZona().equals(Puesto.ZONA_CENTRO)) {
+                    for (Empresa e : empresas) {
+                        if (p.darNombreEmpresa().equals(e.darNombre())) {
+                            cantExpositoresZonaCentro += e.darNumeroPersonasAsistentes();
+                            total.add(cantExpositoresZonaCentro);
+                        }
+                    }
+                    if (cantidadTotalExpositores < cantExpositoresZonaCentro) {
+                        cantidadTotalExpositores = cantExpositoresZonaCentro;
+                        zonaExpositores = Puesto.ZONA_CENTRO;
+                    }
+                }
+            }
+
+            for (Puesto p : puestos) {
+                if (p.estaOcupado() && p.darZona().equals(Puesto.ZONA_OCCIDENTE)) {
+                    for (Empresa e : empresas) {
+                        if (p.darNombreEmpresa().equals(e.darNombre())) {
+                            cantExpositoresZonaOccidente += e.darNumeroPersonasAsistentes();
+                            total.add(cantExpositoresZonaOccidente);
+                        }
+                    }
+                    if (cantidadTotalExpositores < cantExpositoresZonaOccidente) {
+                        cantidadTotalExpositores = cantExpositoresZonaOccidente;
+                        zonaExpositores = Puesto.ZONA_OCCIDENTE;
+                    }
+                }
+            }
+
+            for (Puesto p : puestos) {
+                if (p.estaOcupado() && p.darZona().equals(Puesto.ZONA_ORIENTE)) {
+                    for (Empresa e : empresas) {
+                        if (p.darNombreEmpresa().equals(e.darNombre())) {
+                            cantExpositoresZonaOriente += e.darNumeroPersonasAsistentes();
+                            total.add(cantExpositoresZonaOriente);
+                        }
+                    }
+                    if (cantidadTotalExpositores < cantExpositoresZonaOriente) {
+                        cantidadTotalExpositores = cantExpositoresZonaOriente;
+                        zonaExpositores = Puesto.ZONA_ORIENTE;
+                    }
+                }
+            }
+
+        Collections.sort(total);
+
+        return "La zona con el mayor número de expositores es: " + zonaExpositores + " con " + total.get(total.size() - 1);
+
     }
 
     /**
@@ -461,7 +554,33 @@ public class FeriaEmpresarial {
      * @return respuesta2
      */
     public String metodo2() {
-        return "Respuesta 2";
+
+
+        double porcentaje = 0;
+
+        porcentaje = (double) cantidadTotalExpositores / 237;
+        porcentaje = porcentaje * 100;
+
+        if (porcentaje > 60.0) {
+            return "El punto de equilibrio se ha cumplido " + String.format("%.2f", porcentaje) + "%" + cantidadTotalExpositores;
+        }
+        else {
+            return "El punto de equilibrio no se ha cumplido "  + String.format("%.2f", porcentaje) + "%";
+        }
     }
+
+
+        /**
+         * Porcentaje de ocupación
+
+        porcentajeOcupacion();
+
+        if (porcentajeOcupacion() > 60.0) {
+            return "El punto de equilibrio se ha cumplido " + String.format("%.2f", porcentajeOcupacion()) + "%";
+        }
+        else {
+            return "El punto de equilibrio no se ha cumplido "  + String.format("%.2f", porcentajeOcupacion()) + "%";
+        }
+    }*/
 
 }
