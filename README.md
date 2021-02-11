@@ -38,7 +38,7 @@ Software Development :gear:
 
 * Solution to problems on algorithmic complexity
 
-### Binary trees
+* Binary trees
 
 * Solution to graphs with Dijkstra's algorithm
 
@@ -69,5 +69,4 @@ Software Development :gear:
 
 ## Contact
 
-Leidy Johana S.  
 :octocat: GitHub [@Leidysalda](https://github.com/LeidySalda)
